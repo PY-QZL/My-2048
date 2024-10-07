@@ -1,0 +1,48 @@
+《导入模块》
+#include <iostream>
+#include <random>
+#include <fstream>
+#include <string>
+#include <Windows.h>
+using namespace std;
+
+《棋盘数据》
+int dat[4][4] = {};
+《记录一步内一格是否合成过》（配合input()使用）
+bool hecheng[4][4] = {};
+void random_add(string s)：随机添加格子
+
+《函数》
+void init()：初始化函数（可舍弃）
+void print(int num)：打印棋盘和当前得分（num）
+bool ToOne()：（在棋盘满格时）判断是否能合成（配合lose()使用）
+bool lose()：判断是否失败
+
+根据操作更改数据（dat），配合input()使用
+void w();
+void s();
+void a();
+void d();
+
+void input(char c)：检测玩家输入（c）
+int sum_biggist()：返回棋盘中最大的格子，即当前得分
+引导开始游戏
+void leadgame(int& score, fstream& fscore, fstream& ffile)：打印游戏导语
+	int& score：历史最高分数
+	fstream& s，fstream& f：同下
+	新游戏(1)
+		直接开始
+	继续游戏(2)
+		// 是否继续游戏（就不用随机刷新格子）
+		static bool continuegame = 0;
+	退出游戏并存档(3)
+		// 是否退出游戏
+		static bool exitgame = 0;
+
+文件操作
+void mysavefile(fstream& s, fstream& f, int oldscore, int newscore)：保存数据
+	fstream& s：记录最高分数的文件的接口
+	fstream& f：存档的接口
+	int oldscore：记录最高分数的文件的分数
+	int newscore：本局（最高）分数
+void acceptfile(fstream& s, fstream& f)：接收数据，参数同上

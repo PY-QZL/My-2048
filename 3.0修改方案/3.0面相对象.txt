@@ -1,0 +1,35 @@
+《类》
+棋盘类 Board：控制棋盘的数据
+打印类 Print：打印内容给玩家
+文件类 File：读取文件数据
+操作类 choice：接收玩家输入
+功能类 Fun：除控制棋盘外的其他选择
+失败类 Lose：判断是否失败
+
+棋盘
+int dat[4][4] = {};
+void w();
+void s();
+void a();
+void d();
+int sum_biggist();
+void random_add(string s)；
+
+打印
+void leadgame(int& score, fstream& fscore, fstream& ffile)
+void print(int num);
+
+文件
+void acceptfile(fstream& s, fstream& f)
+void mysavefile(fstream& s, fstream& f, int oldscore, int newscore)
+
+操作
+bool hecheng[4][4] = {};
+void input();
+
+功能
+void 
+
+失败
+bool ToOne();
+bool lose();
